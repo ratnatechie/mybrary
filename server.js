@@ -1,6 +1,4 @@
-// if (process.env.NODE_ENV !== "production") {
 require("dotenv").config();
-// }
 console.log(process.env.DATABASE_URL);
 const express = require("express");
 const app = express();
@@ -23,4 +21,8 @@ db.on("open", () => console.log("Connected to Mongoose"));
 
 app.use("/", indexRouter);
 
-app.listen(process.env.PORT || 3000);
+//app.listen(process.env.PORT || 3000);
+
+app.listen(process.env.PORT || 3000, function () {
+  console.log("Express is working on port ");
+});
